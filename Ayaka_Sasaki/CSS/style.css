@@ -1,0 +1,336 @@
+@charset "UTF-8";
+
+/* 共通部分 --------------- */
+html {
+    font-size: 100%;
+}
+
+body{
+    font-family: "小塚ゴシック Pr6N","BIZ UDGothic","A-OTF じゅん Pro";
+    line-height: 1.7;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+/* CSSコード */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #fff;
+}
+/* HEADER -----------*/
+.logo{
+    width: 210px;
+    margin-top: 14px;
+    font-size: 24px;
+}
+/* ハンバーガーメニュー */
+.drawer-hidden{
+    display: none;
+}/* チェックボックス非表示 */
+/* ハンバーガーメニュー位置 */
+.drawer-open{
+    display: flex;
+    height: 100x;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+label{
+    margin-top: 70px;
+}
+/* ハンバーガーメニューアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+}
+/* 三本線一番上 */
+.drawer-open span:before{
+    bottom: 8px;
+}
+/* 三本線一番した */
+.drawer-open span:after{
+    top: 8px;
+}
+/* アイコンがクリックされたら真ん中の線透過 */
+#drawer-input:checked ~ .drawer-open span{
+    background: rgba(255, 255, 255, 0);
+}
+/* アイコンがクリックされたらアイコンが✖️印になるようにする */
+#drawer-input:checked ~ .drawer-open span:before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer-input:checked ~ .drawer-open span:after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+/* メニューデザイン */
+.nav-content{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: 0;
+    left: 100%;/*メニューを外に外す*/
+    z-index: 99;
+    background: rgb(238, 158, 235);
+    transition: .5s;
+    text-align: center;
+    padding: 20px;
+}
+/* メニューの黒ポチをけす */
+.nav-list{
+    list-style: none;
+    
+}
+/* アイコンがクリックされたらメニューの表示 */
+#drawer-input:checked ~ .nav-content{
+    left: 0;/*メニューを画面に入れる*/
+
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* キャッチコピー */
+.home-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+    font-family: "ab-megadot9", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+/* TOP 背景画像 */
+.big-bg{
+    background-size: cover;
+    background-position: center top;
+}
+
+#home{
+    background-image: url(../images/top.jpg);
+    min-height: 100vh;
+}
+
+#home .pagetitle{
+    text-transform: none;
+}
+/* 共通タイトル部分 */
+.hurt{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.page-title{
+    text-align: center;
+    color: #d5007f;
+    text-shadow: 2px 4px 0 #000;
+    font-family: "ab-megadot9", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+
+/* ボタン */
+.more-buttom{
+    font-size: 1.375rem;
+    background-image: url(../images/botomm.png);
+    background-position: center;
+    color: #000;
+    display: flex;
+    padding: 18px 32px;
+    justify-content: center;
+    background-repeat: no-repeat;
+    font-family: "ab-megadot9", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.more-buttom:hover{
+    color: blue;
+    opacity: 0.3;
+}
+/* ABOUT */
+.face img{
+    width: 400px;
+    height: 400px;
+    border-radius: 40px;
+}
+
+.panel-about{
+    display: flex;
+    justify-content: space-between;
+   }
+
+article{
+    width: 40%;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .7);
+    width: 400px;
+    height: 360px;
+    padding: 20px;
+    border-radius: 40px;
+    }
+
+article p{
+    font-size: 18px;
+}
+
+.img-wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+
+.pipe1{
+    padding-right: 100px;
+}
+
+.people1{
+    padding-right: 100px;
+}
+/* WARKS ------------*/
+.grid{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+.item{
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 40px;
+    text-align: center;
+    padding: 30px;
+}
+
+.item img{
+    height: 200px;
+}
+/* CONTACT */
+form{
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .7);
+    min-height: 50vh;
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+label{
+    font-size: 1.125rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea{
+    background: rgba(255, 255, 255, .5);
+    border: 1px #000 solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"]{
+    width: 100%;
+    max-width: 580px;
+}
+
+textarea{
+    width: 100%;
+    max-width: 580px;
+    height: 6rem;
+}
+
+input[type="submit"]{
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    background-image: url(../images/botomm.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 18px 32px;
+    font-size: 1.375rem;
+}
+.buttom{
+    display: block;
+    margin: 20px auto;
+    font-family: "ab-megadot9", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.buttom:hover{
+    color: blue;
+    opacity: 0.3;
+}
+
+.content-contact p{
+    font-family: "ab-megadot9", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin: 30px;
+}
+
+.contact-img{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+/* フッター ----------------*/
+footer{
+    background:#ffd7e9;
+    text-align: center;
+    padding: 26px 0;
+}
+
+footer p{
+    color: #000;
+    font-size: 0.875rem;
+    font-family: "ab-megadot9", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* 背景画像 */
+.top{
+    background-image: url(../images/pinkback.png);
+}
